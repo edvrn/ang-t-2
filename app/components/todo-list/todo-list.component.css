@@ -3,6 +3,6 @@ todo-item {
     align-items: center;
 }
 
-/*
-
-*/  
+todo-item::not(::last-child){
+    margin: 10px;
+}
