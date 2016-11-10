@@ -1,13 +1,17 @@
 import {Component, Input } from  '@angular/core';
-import{ TodoItem } from '../todo-item/todo-item.component'
-import{ Todo } from '../shared/todo.model';
+
+import { Todo } from '../shared/todo.model';
+import { TodoItem } from '../todo-item/todo-item.component'
+import { TodoService } from '../shared/todo.service';
+
 
 @Component({
     selector: 'todo-list',
     
     templateUrl: './app/components/todo-list/todo-list.component.html',
     styleUrls: [ './app/components/todo-list/todo-list.component.css'],
-    directives: [TodoItem]
+    directives: [TodoItem],
+    providers: [TodoService]
 
 })
 
@@ -17,7 +21,13 @@ import{ Todo } from '../shared/todo.model';
 
 export class TodoListComponent{
     
-    @Input() todos: Todo[];
+    todos: Todo[];
+
+    constructor (private todoService: TodoService){
+        this.todos = this.todoService.getTodos();
+        console.log('Done');
+    }
+
    
 get sortetTodos(){
     return this.todos.map((todo: Todo) => todo)
