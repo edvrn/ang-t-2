@@ -22,9 +22,7 @@ export class TodoListComponent implements OnInit{
     todos: ITodo[];
 
     constructor (private todoService: TodoService){
-        this.todos = [];
-        this.todoService.order = 1;
-        console.log(this.todoService);
+        this.todos=[];
     }
     
     

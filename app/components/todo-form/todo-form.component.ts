@@ -12,13 +12,10 @@ export class TodoFormComponent {
     
     @Output() added = new EventEmitter();
 
-constructor(private todoService: TodoService){
-    this.todoService.order=2;
-    console.log(this.todoService);
-}
+constructor(private todoService: TodoService){}
 
 
-    add(titile: string){
+    add(titile: string): void{
         if (titile){
             let todo = new Todo(titile);
             this.todoService.addTodo(todo);

@@ -22,10 +22,7 @@ export class AppComponent {
         this.title = 'Ангуляр2Ду';
 
     }
-/*
-    onTodoAdded(todo: Todo) {
-        this.todos.push( todo );
-    }*/
+
 
 
 

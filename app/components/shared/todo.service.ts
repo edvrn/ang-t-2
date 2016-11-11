@@ -9,7 +9,6 @@ import { ITodo } from './todo.model';
 export class TodoService {
 
 
-    order: number;
     getTodos(): Promise<ITodo[]> {
         return new Promise(resolve => setTimeout(() => resolve(todos), 1000));
     }

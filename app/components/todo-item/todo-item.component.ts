@@ -11,11 +11,11 @@ export class TodoItem {
     @Input() todo: Todo;
     @Output() deleted = new EventEmitter()
 
-    toggleDone(){
+    toggleDone(): void{
          this.todo.done = !this.todo.done;
     }
 
-    delete(){
+    delete(): void{
         this.deleted.emit(this.todo);
     }
 }
